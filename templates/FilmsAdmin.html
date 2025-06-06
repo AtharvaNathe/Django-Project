@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films Admin Panel</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #003366; /* Navy Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            background-color: #003366;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Films Admin Panel</h1>
+    </header>
+    <div class="container">
+        <p><strong>Logged in as:</strong> {{ user }}</p>
+        <hr>
+        <div class="d-flex flex-column">
+            <a href="#" class="btn btn-custom mb-3">Modify Rating</a>
+            <a href="/del/" class="btn btn-danger">Delete Film</a>
+        </div>
+    </div>
+</body>
+</html>

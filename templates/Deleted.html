@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delete Film Status</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .container {
+      margin-top: 40px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+    }
+    .status {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #003366;
+    }
+    .btn-home {
+      margin-top: 20px;
+      background-color: #003366;
+      color: white;
+    }
+    .btn-home:hover {
+      background-color: #002244;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Delete Film Status</h1>
+  </header>
+
+  <div class="container mx-auto">
+    <h2 class="text-center mb-4">Result of Deletion</h2>
+    <p class="status">Status: {{ status|default:"No status available" }}</p>
+    <p>Deleted by: <strong>{{ userid|default:"Unknown" }}</strong></p>
+
+    <div class="text-center">
+      <a href="/" class="btn btn-home">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

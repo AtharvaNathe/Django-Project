@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJAX Genre Search</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css"/>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .container {
+      margin-top: 30px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-custom {
+      background-color: #003366;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #990000;
+    }
+    #res {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function makeGetRequest() {
+      const gen = document.getElementById("genre").value;
+      fetch(`/ajaxgen/${gen}/`)
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('res').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('res').innerHTML = "<p class='text-danger'>Error fetching data.</p>";
+          console.error(err);
+        });
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <h1>AJAX Genre Search</h1>
+  </header>
+
+  <div class="container">
+    <h2 class="text-center">Search Films by Genre</h2>
+    <hr/>
+    <form>
+      <div class="mb-3">
+        <label for="genre" class="form-label"><strong>Select Genre:</strong></label>
+        <select class="form-control" id="genre" name="genre" onchange="makeGetRequest()">
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Romance">Romance</option>
+          <option value="Horror">Horror</option>
+        </select>
+      </div>
+    </form>
+    <div id="res"></div>
+  </div>
+</body>
+</html>

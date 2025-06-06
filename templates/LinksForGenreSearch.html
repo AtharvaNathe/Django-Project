@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Films by Genre</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #003366; /* Navy Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        table td {
+            padding: 15px;
+        }
+        table a {
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        table a:hover {
+            color: #990000;
+        }
+        img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Search Films by Genre</h1>
+    </header>
+    <div class="container">
+        <h2 class="text-center">Select a Genre</h2>
+        <hr>
+        <table class="table table-borderless">
+            <tr>
+                <td><a href="/searchongenrepara/action/"><img src="/static/act.jpeg" height="120" alt="Action"><br>Action</a></td>
+                <td><a href="/searchongenrepara/romance/"><img src="/static/rom.jpeg" height="120" alt="Romance"><br>Romance</a></td>
+                <td><a href="/searchongenrepara/comedy/"><img src="/static/com.jpeg" height="120" alt="Comedy"><br>Comedy</a></td>
+                <td><a href="/searchongenrepara/horror/"><img src="/static/hor.jpeg" height="120" alt="Horror"><br>Horror</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

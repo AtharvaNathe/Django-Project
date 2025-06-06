@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Input Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #003366; /* Navy Blue */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .custom-form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-custom {
+            background-color: #003366;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #990000;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Add New Film</h1>
+    </header>
+    <div class="container">
+        <form action="/addfilm/" method="post" class="custom-form">
+            {% csrf_token %}
+            <h2 class="text-center">Film Information</h2>
+            <div class="form-group">
+                <label for="filmname">Film Name</label>
+                <input type="text" class="form-control" id="filmname" name="filmname" maxlength="100" required>
+            </div>
+            <div class="form-group">
+                <label for="relyear">Release Year</label>
+                <input type="number" class="form-control" id="relyear" name="relyear" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <select class="form-control" id="genre" name="genre" required>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Horror">Horror</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="language">Language</label>
+                <input type="text" class="form-control" id="language" name="language" maxlength="25" required>
+            </div>
+            <div class="form-group">
+                <label for="imdbrating">IMDB Rating</label>
+                <input type="number" step="0.1" class="form-control" id="imdbrating" name="imdbrating" required>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Submit</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
